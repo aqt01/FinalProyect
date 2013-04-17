@@ -6,10 +6,11 @@ public class Shot
 	private String Second;
 	private String Third;
 	private String Score;
+	private int Frame_index;
 	private boolean isStrike;
 	private boolean isSpare;
 	private boolean TenthFrame;
-	private boolean isShowable;
+	private boolean isShowing;
 	private boolean isNormal;
 	
 	public Shot(String First, String Second)
@@ -18,7 +19,7 @@ public class Shot
 		this.setSecond(Second);
 		this.isSpare = ((Integer.valueOf(First) + Integer.valueOf(Second)) == 9);
 		this.isSpare = (First.equals("10"));
-		this.isShowable = false;
+		this.isShowing = false;
 		this.isNormal = !(this.isSpare || this.isStrike);
 	}
 	
@@ -29,7 +30,7 @@ public class Shot
 		this.setThird(Third);
 		this.isSpare = ((Integer.valueOf(First) + Integer.valueOf(Second)) == 9);
 		this.isSpare = (First.equals("10"));
-		this.isShowable = false;
+		this.isShowing = false;
 		this.isNormal = !(this.isSpare || this.isStrike);
 	}
 	
@@ -113,14 +114,22 @@ public class Shot
 		this.isNormal = isNormal;
 	}
 
-	public boolean isShowable() 
+	public boolean isShowing() 
 	{
-		return this.isShowable;
+		return this.isShowing;
 	}
 
-	public void setShowable(boolean isShowable) 
+	public void setShowing(boolean isShowing) 
 	{
-		this.isShowable = isShowable;
+		this.isShowing = isShowing;
+	}
+
+	public int getFrame_index() {
+		return Frame_index;
+	}
+
+	public void setFrame_index(int frame_index) {
+		Frame_index = frame_index;
 	}
 
 }

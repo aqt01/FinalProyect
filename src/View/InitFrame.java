@@ -13,6 +13,8 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
+
+
 public class InitFrame 
 {
 	JFileChooser chooser;
@@ -39,7 +41,7 @@ public class InitFrame
     {
     	
     	//Resize?
-    	//frame.setSize(200,200);
+    	frame.setSize(400,330);
 		
 		frame.setLocation( getMiddleFrameX(frame), getMiddleFrameY(frame));
     	frame.setDefaultLookAndFeelDecorated(false);
@@ -49,9 +51,14 @@ public class InitFrame
     	Container cont = frame.getContentPane(); 
     	cont.setLayout(new FlowLayout());
     	//JOptionPane.showMessageDialog(frame, "KLK");
-    	Icon image = new ImageIcon(getClass().getResource("Splash.jpg"));
-    	Icon iconLoad = new ImageIcon (getClass().getResource("Load.jpg"));
-    	Icon iconExit = new ImageIcon (getClass().getResource("Exit.jpg"));
+    	//Icon image = new ImageIcon(getClass().getResource("Splash.png"));
+    	//Icon iconLoad = new ImageIcon (getClass().getResource("Load.png"));
+    	//Icon iconExit = new ImageIcon (getClass().getResource("Exit.png"));
+    	
+    	Icon image = new ImageIcon("Splash.png");
+    	Icon iconLoad = new ImageIcon ("Load.png");
+    	
+    	Icon iconExit = new ImageIcon ("Exit.png");
     	
     	JLabel buttonCharge = new JLabel(iconLoad);    	
     	JLabel buttonExit = new JLabel(iconExit);  
@@ -164,6 +171,7 @@ public class InitFrame
 			chooser.showOpenDialog(frame);								
 			response = JOptionPane.showConfirmDialog(frame, "Want to load the file ?'" + chooser.getSelectedFile().getName()+  "'");
 			// si se cancela, no retorna ruta
+			
 			if(response==JOptionPane.CANCEL_OPTION)
 			{
 				response = JOptionPane.showConfirmDialog(frame, "Want to cacel the file load?");
@@ -181,3 +189,4 @@ public class InitFrame
 	}
 	
 }
+

@@ -6,10 +6,14 @@ package View;
      */  
       
     //Java Core Package  
-    import javax.swing.*;  
-    //Java Extension Package  
-    import java.awt.*;  
-import java.awt.event.*;  
+    import java.awt.Container;
+import java.awt.GridLayout;
+
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+import javax.swing.JProgressBar;
+//Java Extension Package  
+    
       
     public class simpleProgressBar  
     {     

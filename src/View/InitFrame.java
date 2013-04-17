@@ -35,6 +35,7 @@ public class InitFrame
 		
 	}
 	
+	@SuppressWarnings("static-access")
 	public void LoadComponents(final JFrame frame) 
     {
     	
@@ -78,7 +79,7 @@ public class InitFrame
 				
 				if(!path.equals(no))
 				{
-					 simpleProgressBar progres = new simpleProgressBar(100,100);
+					// simpleProgressBar progres = new simpleProgressBar(100,100);
 				}
 				
 			

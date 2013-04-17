@@ -13,8 +13,6 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
-
-
 public class InitFrame 
 {
 	JFileChooser chooser;
@@ -166,7 +164,6 @@ public class InitFrame
 			chooser.showOpenDialog(frame);								
 			response = JOptionPane.showConfirmDialog(frame, "Want to load the file ?'" + chooser.getSelectedFile().getName()+  "'");
 			// si se cancela, no retorna ruta
-			progres.main(null);
 			if(response==JOptionPane.CANCEL_OPTION)
 			{
 				response = JOptionPane.showConfirmDialog(frame, "Want to cacel the file load?");

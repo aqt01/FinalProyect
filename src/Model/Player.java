@@ -18,7 +18,6 @@ public class Player
 	public void addShot(String f, String s)
 	{
 		Shot shot = new Shot(f, s);
-		Shots.get(Frame_index).setFrame_index(Frame_index);
 		Frame_index++;
 		
 		shot.setTenthFrame(Frame_index == 10);
@@ -32,7 +31,6 @@ public class Player
 	public void addShot(String f, String s, String t)
 	{
 		Shot shot = new Shot(f, s, t);
-		Shots.get(Frame_index).setFrame_index(Frame_index);
 		Frame_index++;
 		
 		shot.setTenthFrame(Frame_index == 10);

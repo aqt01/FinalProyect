@@ -17,10 +17,10 @@ public class ModelController
 		Reader = new File_Reader();
 	}
 	
-	public void InitController()
+	public void InitController(String file)
 	{	
 		try {
-			initializePlayers();
+			initializePlayers(file);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -29,8 +29,9 @@ public class ModelController
 		PrinTests();
 	}
 	
-	public void initializePlayers() throws IOException
+	public void initializePlayers(String file) throws IOException
 	{
+		Reader.setFile(file);
 		List<Player> P = this.Reader.Read_Input();
 		this.Player0 = P.get(0);
 		this.Player = P.get(1);

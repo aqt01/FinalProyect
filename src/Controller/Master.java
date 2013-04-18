@@ -20,14 +20,14 @@ public class Master
 	{
 		Resorse = new ResorseManager();
 		Model = new ModelController();
-		View = new ViewController(Resorse.PATH);
-		
+		View = new ViewController();
 	}
 	
 	public void InitControllers()
 	{
 		View.InitController();
-		Model.InitController();
-		Model.setFile(View.getFILE_PATH());
+		System.out.println(Resorse.PATH + "Files" + View.getFILE_NAME());
+		Model.InitController(Resorse.PATH + "Files" + View.getFILE_NAME());
+		
 	}
 }

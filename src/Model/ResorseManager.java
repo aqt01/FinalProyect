@@ -16,7 +16,7 @@ public class ResorseManager
 	private void InitManager()
 	{
 		String desktopPath =System.getProperty("user.home") + WINDOWS_SEPARATOR +"Desktop";
-        String s = "\"" + desktopPath.replace(WINDOWS_SEPARATOR, WINDOWS_SEPARATOR + WINDOWS_SEPARATOR) + (WINDOWS_SEPARATOR + WINDOWS_SEPARATOR) + "satis" + "\"";
+        String s = desktopPath.replace(WINDOWS_SEPARATOR, WINDOWS_SEPARATOR) + "FinalProyect" + "\"";
         
 		String osName = System.getProperty("os.name").toLowerCase();
 		boolean isMacOs = osName.startsWith("mac os x");
@@ -24,9 +24,10 @@ public class ResorseManager
 		if (isMacOs) 
 		{
 			desktopPath = System.getProperty("user.home") + MAC_SEPARATOR + "Desktop";
-			s = MAC_SEPARATOR + desktopPath.replace("//","////") + "////" +"FinalProyect" + MAC_SEPARATOR;
+			s =  desktopPath.replace("/","/") + "/" +"FinalProyect" + MAC_SEPARATOR;
 		}
         
+		PATH = s;
 		System.out.print(s);
         File f = new File(s);
         boolean mkdir = f.mkdir();

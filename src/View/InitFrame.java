@@ -17,6 +17,7 @@ public class InitFrame
 {
 	JFileChooser chooser;
 	simpleProgressBar progres ;
+	public String PATH;
 	// Load the components onto the frame
 	
 	public int getMiddleFrameY(JFrame frame) 
@@ -80,6 +81,7 @@ public class InitFrame
 				// TODO Auto-generated method stub
 				String path = FileChooser(frame);			
 				
+				PATH = path;
 				String no = "NO";
 				
 				if(!path.equals(no))

@@ -12,16 +12,17 @@ public class ViewController
 	public BowlFrame Bowl;
 	private String FILE_PATH = "";
 	
-	public ViewController()
+	public ViewController(String PATH)
 	{
 		this.InitView = new InitFrame();
-		this.Bowl = new BowlFrame();
+		//this.Bowl = new BowlFrame();
+		this.FILE_PATH = PATH;
 	}
 	
 	public void InitController()
 	{
 		chooseFileWindow();
-		Bowl.setVisible(true);
+		//Bowl.setVisible(true);
 	}
 	
 	private void chooseFileWindow()
@@ -34,7 +35,7 @@ public class ViewController
         // Normally, we'd call splash.showSplash() and get on 
         // with the program. But, since this is only a test...       
 		
-		splash.showSplash(300,250);		
+		splash.showSplash();		
 		frame.setSize(400,400);		
 		init.LoadComponents(frame);
 		setFILE_PATH(init.FileChooser(frame));

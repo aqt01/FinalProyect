@@ -11,12 +11,8 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JWindow;
 
-<<<<<<< HEAD
 @SuppressWarnings("serial")
-public class SplashScreen extends JWindow {
-=======
 public class SplashScreen extends JWindow implements Runnable{
->>>>>>> 94dfed0c55a8df1f709143854d06887c6082c878
 	JPanel content = (JPanel)getContentPane();
     JFrame frame;  
     

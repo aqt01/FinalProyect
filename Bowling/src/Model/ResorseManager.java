@@ -55,12 +55,35 @@ public class ResorseManager
 		}
 		
 	    
-		PATH = s;
-		System.out.print(s);
+		PATH = s;		
+		System.out.println(s);
         File f = new File(s);        
         boolean mkdir = f.mkdir();
         
-        System.out.println(mkdir);
+        
+    
+        if (isMacOs) 
+		{
+			s =  desktopPath.replace("/","/") + "/" +"FinalProyect" + MAC_SEPARATOR;
+		}
+		
+		if(isLinux)
+		{
+			
+			s =  desktopPath.replace("/","/") + "/" +"FinalProyect" + MAC_SEPARATOR;
+	
+		}
+	
+        string fp = s + "";
+        
+        File fF = new File(fp);        
+        boolean mkdirFile = fF.mkdir();
+        
+
+		//PATH = s;
+		System.out.println
+		(s);
+        System.out.println(mkdirFile);
         
 	}
 }

@@ -2,6 +2,10 @@ package Model;
 
 import java.io.File;
 
+import java.io.File;
+import java.io.IOException;
+
+
 public class ResorseManager 
 {
 	private static String WINDOWS_SEPARATOR = "\\";
@@ -16,21 +20,47 @@ public class ResorseManager
 	private void InitManager()
 	{
 		String desktopPath =System.getProperty("user.home") + WINDOWS_SEPARATOR +"Desktop";
-        String s = desktopPath.replace(WINDOWS_SEPARATOR, WINDOWS_SEPARATOR) + "FinalProyect" + "\"";
+        String s = desktopPath.replace(WINDOWS_SEPARATOR, WINDOWS_SEPARATOR) + WINDOWS_SEPARATOR + "FinalProyect" +WINDOWS_SEPARATOR ;
         
 		String osName = System.getProperty("os.name").toLowerCase();
-		boolean isMacOs = osName.startsWith("mac os x");
+		boolean isMacOs = osName.startsWith("mac os x");				
+		boolean  isLinux = (osName.indexOf("nix") >= 0 || osName.indexOf("nux") >= 0 || osName.indexOf("aix") > 0);
+		
 		
 		if (isMacOs) 
 		{
 			desktopPath = System.getProperty("user.home") + MAC_SEPARATOR + "Desktop";
 			s =  desktopPath.replace("/","/") + "/" +"FinalProyect" + MAC_SEPARATOR;
 		}
-        
+		
+		if(isLinux)
+		{
+			
+			desktopPath = System.getProperty("user.home") + MAC_SEPARATOR + "Desktop";
+			s =  desktopPath.replace("/","/") + "/" +"FinalProyect" + MAC_SEPARATOR;
+	
+		}
+		
+		
+		// windows copying process
+		String copyPath;
+		copyPath = "cmd.exe" + "\\c"+ " xcopy .\\Files\\* C:" + s;
+		
+		try {
+			Process process = Runtime.getRuntime()
+				     .exec(copyPath);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	    
 		PATH = s;
 		System.out.print(s);
-        File f = new File(s);
+        File f = new File(s);        
         boolean mkdir = f.mkdir();
+        
         System.out.println(mkdir);
+        
 	}
 }

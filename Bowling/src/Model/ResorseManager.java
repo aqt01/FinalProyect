@@ -3,6 +3,8 @@ package Model;
 import java.io.File;
 import java.io.IOException;
 
+import javax.swing.JOptionPane;
+
 
 public class ResorseManager 
 {
@@ -65,8 +67,12 @@ public class ResorseManager
 		{			
 			try {
 				
+				//Process process = Runtime.getRuntime()
+					//	.exec("cp ./Files/* " + fp);
+				String[] b = new String[] {"bash", "-c", "cp -R "  + "./\"Files/\"* \"" + fp + "/\""};
 				Process process = Runtime.getRuntime()
-						.exec("cp ./Files/* " + fp);			
+						.exec(b);
+				
 				System.out.println("here");
 				System.out.println(Runtime.getRuntime().exec("ls"));
 			} catch (IOException e) {
@@ -88,7 +94,16 @@ public class ResorseManager
 		} 
         
 		}          
-        
+		String mess;
+		
+		if(mkdir && mkdirFile)
+			mess = "Folder already created or didn't exists";
+		else
+			mess = "Folder w/ Project Files Created ";
+		
+		JOptionPane.showMessageDialog(null, mess +s);
+		
+
 		//PATH = s;
         System.out.println("This is FP:");
 		System.out.println(fp);

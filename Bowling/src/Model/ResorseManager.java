@@ -1,8 +1,6 @@
 package Model;
 
 import java.io.File;
-
-import java.io.File;
 import java.io.IOException;
 
 
@@ -27,62 +25,73 @@ public class ResorseManager
 		boolean  isLinux = (osName.indexOf("nix") >= 0 || osName.indexOf("nux") >= 0 || osName.indexOf("aix") > 0);
 		
 		
-		if (isMacOs) 
+		if (isMacOs || isLinux) 
 		{
 			desktopPath = System.getProperty("user.home") + MAC_SEPARATOR + "Desktop";
 			s =  desktopPath.replace("/","/") + "/" +"FinalProyect" + MAC_SEPARATOR;
-		}
+		}						
+	    
+		PATH = s;		
+		// print the path
 		
-		if(isLinux)
+		System.out.println(s);
+        File f = new File(s); // creates the folder        
+        boolean mkdir = f.mkdir();
+        
+        String fp = null ; // Path w/ resources of the proyect
+    	
+        
+        // For creating folder w/ files for the proyject resources
+		if(isLinux || isMacOs)
 		{
 			
-			desktopPath = System.getProperty("user.home") + MAC_SEPARATOR + "Desktop";
-			s =  desktopPath.replace("/","/") + "/" +"FinalProyect" + MAC_SEPARATOR;
+			fp = s + "Files" + MAC_SEPARATOR;
 	
+		} else
+		{
+			fp = s + "Files" + WINDOWS_SEPARATOR;			
 		}
-		
-		
-		// windows copying process
-		String copyPath;
-		copyPath = "cmd.exe" + "\\c"+ " xcopy .\\Files\\* C:" + s;
-		
-		try {
+	                
+        File fileFolder = new File(fp);        
+        boolean mkdirFile = fileFolder.mkdir();
+        
+        
+        
+        // IF is in windows
+        
+        
+    	// windows copying process
+		if(isLinux || isMacOs)
+		{			
+			try {
+				
+				Process process = Runtime.getRuntime()
+						.exec("cp ./Files/* " + fp);			
+				System.out.println("here");
+				System.out.println(Runtime.getRuntime().exec("ls"));
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+
+		}
+		// Copying process for linux and Mac
+		else {
+        try {
+        	String copyPath = "cmd.exe" + "\\c"+ " xcopy .\\Files\\* C:" + fp;
 			Process process = Runtime.getRuntime()
-				     .exec(copyPath);
+					.exec(copyPath);			
+			
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}
-		
-	    
-		PATH = s;		
-		System.out.println(s);
-        File f = new File(s);        
-        boolean mkdir = f.mkdir();
+		} 
         
+		}          
         
-    
-        if (isMacOs) 
-		{
-			s =  desktopPath.replace("/","/") + "/" +"FinalProyect" + MAC_SEPARATOR;
-		}
-		
-		if(isLinux)
-		{
-			
-			s =  desktopPath.replace("/","/") + "/" +"FinalProyect" + MAC_SEPARATOR;
-	
-		}
-	
-        string fp = s + "";
-        
-        File fF = new File(fp);        
-        boolean mkdirFile = fF.mkdir();
-        
-
 		//PATH = s;
-		System.out.println
-		(s);
+        System.out.println("This is FP:");
+		System.out.println(fp);
         System.out.println(mkdirFile);
         
 	}

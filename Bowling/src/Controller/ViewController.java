@@ -10,27 +10,36 @@ public class ViewController
 {
 	public InitFrame InitView;
 	public BowlFrame Bowl;
-	private String FILE_NAME = "";
+	private String FILE_NAME;
 	
 	public ViewController()
 	{
-		this.InitView = new InitFrame();
-		//this.Bowl = new BowlFrame();
+		InitView = new InitFrame();
+		Bowl = new BowlFrame();
 	}
 	
-	public void InitController()
+	public void InitController(String _pathFiles)
 	{
+		
+		FILE_NAME = _pathFiles;
 		chooseFileWindow();
+
+		//Bowl.setFilePath(FILE_NAME);
+		//InitView.setFilePath(FILE_NAME);
 		//Bowl.setVisible(true);
+	//	this.InitView.setFilePath(_pathFiles);
+		
 	}
 	
 	private void chooseFileWindow()
 	{
+
+		System.out.println("GOT THIS "  + FILE_NAME);
 		InitFrame init = new InitFrame();
-		JFrame frame = new JFrame("Bowling Game");	
-		
+		init.setFilePath(FILE_NAME);
+		JFrame frame = new JFrame("Bowling Game");			
 		SplashScreen splash = new SplashScreen();
-        
+        splash.setFilePath(FILE_NAME);
         // Normally, we'd call splash.showSplash() and get on 
         // with the program. But, since this is only a test...       
 		

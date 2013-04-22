@@ -12,16 +12,28 @@ import javax.swing.JPanel;
 import javax.swing.JWindow;
 
 @SuppressWarnings("serial")
+
 public class SplashScreen extends JWindow implements Runnable{
 	JPanel content = (JPanel)getContentPane();
     JFrame frame;  
+    String resPath; // Resource Path, here this variable will be inserted by the constructor, 
+    //so when it's called by ViewController, takes the correct value
+    
+    
     
     
     private int duration;
    
       public SplashScreen() {
         duration = 2000;
+        
     }
+      
+    public void setFilePath(String _filePath) 
+  	{
+  		resPath= _filePath;
+  		
+  	}
     
     public void showSplash() {
         
@@ -35,9 +47,9 @@ public class SplashScreen extends JWindow implements Runnable{
          int x = (screen.width-width)/2;
          int y = (screen.height-height)/2;
          setBounds(x,y,width,height);
-         
+         System.out.println("!!!!" + resPath);
          // Build the splash screen
-         JLabel label = new JLabel(new ImageIcon("Splash.png"));
+         JLabel label = new JLabel(new ImageIcon(resPath + "Splash.png"));
          JLabel copyrt = new JLabel
                  ("Copyright 2013 Bowling Game", JLabel.CENTER);
          copyrt.setFont(new Font("Sans-Serif", Font.BOLD, 12));

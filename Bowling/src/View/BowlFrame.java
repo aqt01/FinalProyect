@@ -58,6 +58,11 @@ public class BowlFrame extends JFrame
 		return FILE_PATH;
 	}
 	
+	public void setFilePath(String _filePath) 
+	{
+		FILE_PATH = _filePath; 
+	}
+	
 	public void setPlayers(Player p0, Player p)
 	{
 		Player0 = p0;
@@ -68,10 +73,10 @@ public class BowlFrame extends JFrame
 	
 	private void contentInit() 
 	{
-		btnBIcon = new ImageIcon(getClass().getResource("bbtn.png"));
+		btnBIcon = new ImageIcon(FILE_PATH + "bbtn.png");
 		btnBIcon = new ImageIcon(btnBIcon.getImage().getScaledInstance(Res_Helper.WIDTH3, Res_Helper.HEIGHT3,  java.awt.Image.SCALE_SMOOTH));
 		
-		btnNIcon = new ImageIcon(getClass().getResource("nbtn.png"));
+		btnNIcon = new ImageIcon(FILE_PATH + "nbtn.png");
 		btnNIcon = new ImageIcon(btnNIcon.getImage().getScaledInstance(Res_Helper.WIDTH3, Res_Helper.HEIGHT3,  java.awt.Image.SCALE_SMOOTH));
 		
 		
@@ -173,16 +178,16 @@ public class BowlFrame extends JFrame
 	
 	private void titleInit()
 	{
-		titleIcon = new ImageIcon(getClass().getResource("tbar.png"));
+		titleIcon = new ImageIcon(FILE_PATH + "tbar.png");
 		titleIcon = new ImageIcon(titleIcon.getImage().getScaledInstance(Res_Helper.WIDTH0 + Res_Helper.WIDTH0/7, Res_Helper.HEIGHT0 + Res_Helper.HEIGHT0/10,  java.awt.Image.SCALE_SMOOTH));
 		
-		cbtn = new ImageIcon(getClass().getResource("cbtn2.png"));
+		cbtn = new ImageIcon(FILE_PATH + "cbtn2.png");
 		cbtn = new ImageIcon(cbtn.getImage().getScaledInstance(Res_Helper.WIDTHC - 10, Res_Helper.HEIGHTC,  java.awt.Image.SCALE_SMOOTH));
 		
-		mbtn = new ImageIcon(getClass().getResource("mbtn.png"));
+		mbtn = new ImageIcon(FILE_PATH + "mbtn.png");
 		mbtn = new ImageIcon(mbtn.getImage().getScaledInstance(Res_Helper.WIDTHC, Res_Helper.HEIGHTC,  java.awt.Image.SCALE_SMOOTH));
 		
-		backIcon = new ImageIcon(getClass().getResource("lab.png"));
+		backIcon = new ImageIcon(FILE_PATH + "lab.png");
 		backIcon = new ImageIcon(backIcon.getImage().getScaledInstance(Res_Helper.WIDTH3, Res_Helper.HEIGHT3,  java.awt.Image.SCALE_SMOOTH));
 		
 		

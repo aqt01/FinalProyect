@@ -17,8 +17,13 @@ public class InitFrame
 {
 	JFileChooser chooser;
 	simpleProgressBar progres ;
-	public String PATH;
+	public String FILE;
 	// Load the components onto the frame
+	
+
+	public InitFrame() {
+	
+	}
 	
 	public int getMiddleFrameY(JFrame frame) 
 	{		
@@ -35,7 +40,12 @@ public class InitFrame
 	    return middleX;
 		
 	}
-	
+	//
+	public void setFilePath(String _filePath) 
+	{
+		FILE= _filePath;
+		
+	}
 	@SuppressWarnings("static-access")
 	public void LoadComponents(final JFrame frame) 
     {
@@ -54,11 +64,11 @@ public class InitFrame
     	//Icon image = new ImageIcon(getClass().getResource("Splash.png"));
     	//Icon iconLoad = new ImageIcon (getClass().getResource("Load.png"));
     	//Icon iconExit = new ImageIcon (getClass().getResource("Exit.png"));
+    	System.out.println("!!!! "+ this.FILE);
+    	Icon image = new ImageIcon(this.FILE + "Splash.png");
+    	Icon iconLoad = new ImageIcon (this.FILE + "Load.png");
     	
-    	Icon image = new ImageIcon("Splash.png");
-    	Icon iconLoad = new ImageIcon ("Load.png");
-    	
-    	Icon iconExit = new ImageIcon ("Exit.png");
+    	Icon iconExit = new ImageIcon (this.FILE + "Exit.png");
     	
     	JLabel buttonCharge = new JLabel(iconLoad);    	
     	JLabel buttonExit = new JLabel(iconExit);  
@@ -81,7 +91,7 @@ public class InitFrame
 				// TODO Auto-generated method stub
 				String path = FileChooser(frame);			
 				
-				PATH = path;
+				//PATH = path;
 				String no = "NO";
 				
 				if(!path.equals(no))

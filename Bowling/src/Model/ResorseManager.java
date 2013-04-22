@@ -6,18 +6,19 @@ import java.io.IOException;
 import javax.swing.JOptionPane;
 
 
-public class ResorseManager 
+public class  ResorseManager 
 {
 	private static String WINDOWS_SEPARATOR = "\\";
 	private static String MAC_SEPARATOR = "/";
 	public String PATH;
+	public String pathFiles;
 	
 	public ResorseManager()
 	{
-		InitManager();
+		this.InitManager();
 	}
 	
-	private void InitManager()
+	public void InitManager()
 	{
 		String desktopPath =System.getProperty("user.home") + WINDOWS_SEPARATOR +"Desktop";
         String s = desktopPath.replace(WINDOWS_SEPARATOR, WINDOWS_SEPARATOR) + WINDOWS_SEPARATOR + "FinalProyect" +WINDOWS_SEPARATOR ;
@@ -33,28 +34,28 @@ public class ResorseManager
 			s =  desktopPath.replace("/","/") + "/" +"FinalProyect" + MAC_SEPARATOR;
 		}						
 	    
-		PATH = s;		
+		this.PATH = s;		
 		// print the path
 		System.out.println("Project Folder path: ");
 		System.out.println(s);
         File f = new File(s); // creates the folder        
         boolean mkdir = f.mkdir();
         
-        String fp = null ; // Path w/ resources of the proyect
+         // Path w/ resources of the proyect
     	
         
         // For creating folder w/ files for the proyject resources
 		if(isLinux || isMacOs)
 		{
-			fp = s + "Files" + MAC_SEPARATOR;
+			this.pathFiles = s + "Files" + MAC_SEPARATOR;
 	
 		} else
 		{
 
-			fp = s + "Files" + WINDOWS_SEPARATOR;			
+			this.pathFiles = s + "Files" + WINDOWS_SEPARATOR;			
 		}
 	                
-        File fileFolder = new File(fp);        
+        File fileFolder = new File(this.pathFiles);        
         boolean mkdirFile = fileFolder.mkdir();
         
         
@@ -68,8 +69,8 @@ public class ResorseManager
 			try {
 				
 				//Process process = Runtime.getRuntime()
-					//	.exec("cp ./Files/* " + fp);
-				String[] command = new String[] {"bash", "-c", "cp -R "  + "./\"Files/\"* \"" + fp + "/\""};
+					//	.exec("cp ./Files/* " + this.pathFiles);
+				String[] command = new String[] {"bash", "-c", "cp -R "  + "./\"Files/\"* \"" + this.pathFiles + "/\""};
 				Process process = Runtime.getRuntime()
 						.exec(command);								
 			} catch (IOException e) {
@@ -81,7 +82,7 @@ public class ResorseManager
 		// Copying process for windows
 		else {
         try {        	
-        	String comm = "cmd.exe /c copy .\\Files\\* " + fp;
+        	String comm = "cmd.exe /c copy .\\Files\\* " + this.pathFiles;
        	Process process = Runtime.getRuntime()
 					.exec(comm);			
 			
@@ -100,10 +101,19 @@ public class ResorseManager
 		
 		JOptionPane.showMessageDialog(null, mess +s);
 		
-
+		
 		System.out.println("Project Files Path: ");
-		System.out.println(fp);
+		System.out.println(this.pathFiles);
         System.out.println(mkdirFile);
         
 	}
+	
+	public String getFilePath() {
+		return this.pathFiles;
+	}
+	
+	public String getPath() {
+		return this.PATH;
+	}
+	
 }

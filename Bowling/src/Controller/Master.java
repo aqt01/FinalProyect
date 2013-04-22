@@ -25,11 +25,13 @@ public class Master
 	
 	public void InitControllers()
 	{
-		System.out.println("!!!! > "+Resorse.getFilePath());
-		View.InitController(Resorse.getFilePath());
+		System.out.println("Path of File Projects: "+Resorse.getFilePath());
+		System.out.println("Path of Resources of Projects : "+Resorse.getResPath());
+		View.InitController(Resorse.getResPath());
 		
+		System.out.println("!!!<> <> ! > "+View.InitView.getTxtFilePath());
 		// a partir del fileChooser
-		Model.InitController(Resorse.getPath());
+		Model.InitController(View.InitView.getTxtFilePath());
 		//System.out.println(Resorse.pathFiles + "Files" + View.getFILE_NAME());
 		//Model.InitController(Resorse.pathFiles + "Files" + View.getFILE_NAME());
 		

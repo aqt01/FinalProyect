@@ -18,6 +18,7 @@ public class InitFrame
 	JFileChooser chooser;
 	simpleProgressBar progres ;
 	public String FILE;
+	public String txtFilePath; // this contains the TxtFilePath
 	// Load the components onto the frame
 	
 
@@ -46,6 +47,15 @@ public class InitFrame
 		FILE= _filePath;
 		
 	}
+	
+	public String getTxtFilePath() 
+	{
+		return txtFilePath;
+		
+	}
+	
+	
+	
 	@SuppressWarnings("static-access")
 	public void LoadComponents(final JFrame frame) 
     {
@@ -66,8 +76,7 @@ public class InitFrame
     	//Icon iconExit = new ImageIcon (getClass().getResource("Exit.png"));
     	System.out.println("!!!! "+ this.FILE);
     	Icon image = new ImageIcon(this.FILE + "Splash.png");
-    	Icon iconLoad = new ImageIcon (this.FILE + "Load.png");
-    	
+    	Icon iconLoad = new ImageIcon (this.FILE + "Load.png");    	
     	Icon iconExit = new ImageIcon (this.FILE + "Exit.png");
     	
     	JLabel buttonCharge = new JLabel(iconLoad);    	
@@ -90,13 +99,14 @@ public class InitFrame
 				// TODO Auto-generated method stub
 				// TODO Auto-generated method stub
 				String path = FileChooser(frame);			
-				
+				;
 				//PATH = path;
 				String no = "NO";
-				
+				// si ha seleccionado un archivo, muestra el progres y carga
 				if(!path.equals(no))
 				{
-					// simpleProgressBar progres = new simpleProgressBar(100,100);
+					 simpleProgressBar progres = new simpleProgressBar(100,100);
+					 txtFilePath = path;
 				}
 				
 			
@@ -176,6 +186,7 @@ public class InitFrame
 		while(response != JOptionPane.YES_OPTION) 
 		{
 			chooser= new JFileChooser();
+			
 			FileNameExtensionFilter filter = new FileNameExtensionFilter("Text/Java files", "txt", "java");
 			chooser.setFileFilter(filter);
 			
@@ -192,7 +203,9 @@ public class InitFrame
 					path = FileChooser(frame);
 				}
 				break;			
-			} 
+			}
+			
+			txtFilePath = String.valueOf(chooser.getSelectedFile()) ;
 			path = String.valueOf(chooser.getSelectedFile());
 			
 		}

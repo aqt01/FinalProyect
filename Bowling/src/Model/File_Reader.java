@@ -24,6 +24,7 @@ public class File_Reader
 	
 	public void setFile(String fil)
 	{
+		System.out.println("this file::: " + fil);
 		file = new File(fil);
 	}
 	

@@ -10,8 +10,9 @@ public class  ResorseManager
 {
 	private static String WINDOWS_SEPARATOR = "\\";
 	private static String MAC_SEPARATOR = "/";
-	public String PATH;
-	public String pathFiles;
+	public String PATH; // path to FinalProyect folder
+	public String pathFiles; // path to FinalProyect Files
+	public String pathRes; // path to resFiles
 	
 	public ResorseManager()
 	{
@@ -20,9 +21,8 @@ public class  ResorseManager
 	
 	public void InitManager()
 	{
-		String desktopPath =System.getProperty("user.home") + WINDOWS_SEPARATOR +"Desktop";
-        String s = desktopPath.replace(WINDOWS_SEPARATOR, WINDOWS_SEPARATOR) + WINDOWS_SEPARATOR + "FinalProyect" +WINDOWS_SEPARATOR ;
-        
+		String desktopPath;        
+        String s;
 		String osName = System.getProperty("os.name").toLowerCase();
 		boolean isMacOs = osName.startsWith("mac os x");				
 		boolean  isLinux = (osName.indexOf("nix") >= 0 || osName.indexOf("nux") >= 0 || osName.indexOf("aix") > 0);
@@ -32,8 +32,13 @@ public class  ResorseManager
 		{
 			desktopPath = System.getProperty("user.home") + MAC_SEPARATOR + "Desktop";
 			s =  desktopPath.replace("/","/") + "/" +"FinalProyect" + MAC_SEPARATOR;
-		}						
-	    
+			pathRes = "."+MAC_SEPARATOR + "Res" + MAC_SEPARATOR; 
+		} else
+		{
+			desktopPath =System.getProperty("user.home") + WINDOWS_SEPARATOR +"Desktop";
+	        s = desktopPath.replace(WINDOWS_SEPARATOR, WINDOWS_SEPARATOR) + WINDOWS_SEPARATOR + "FinalProyect" +WINDOWS_SEPARATOR ;	        
+	        pathRes = "."+MAC_SEPARATOR + "Res" + MAC_SEPARATOR;
+		}
 		this.PATH = s;		
 		// print the path
 		System.out.println("Project Folder path: ");
@@ -70,7 +75,7 @@ public class  ResorseManager
 				
 				//Process process = Runtime.getRuntime()
 					//	.exec("cp ./Files/* " + this.pathFiles);
-				String[] command = new String[] {"bash", "-c", "cp -R "  + "./\"Files/\"* \"" + this.pathFiles + "/\""};
+				String[] command = new String[] {"bash", "-c", "cp -R "  + "./\"Files/\"ArchivoPrueba.txt  \"" + this.pathFiles + "/\""};
 				Process process = Runtime.getRuntime()
 						.exec(command);								
 			} catch (IOException e) {
@@ -82,7 +87,7 @@ public class  ResorseManager
 		// Copying process for windows
 		else {
         try {        	
-        	String comm = "cmd.exe /c copy .\\Files\\* " + this.pathFiles;
+        	String comm = "cmd.exe /c copy .\\Files\\ArchivoPrueba.txt " + this.pathFiles;
        	Process process = Runtime.getRuntime()
 					.exec(comm);			
 			
@@ -106,6 +111,11 @@ public class  ResorseManager
 		System.out.println(this.pathFiles);
         System.out.println(mkdirFile);
         
+	}
+	
+	public String getResPath() 
+	{
+		return pathRes;
 	}
 	
 	public String getFilePath() {

@@ -11,6 +11,7 @@ public class ViewController
 	public InitFrame InitView;
 	public BowlFrame Bowl;
 	private String FILE_NAME;
+	private String pathRes;
 	
 	public ViewController()
 	{
@@ -22,12 +23,12 @@ public class ViewController
 	{
 		
 		FILE_NAME = _pathFiles;
-		chooseFileWindow();
+		this.chooseFileWindow();
 
-		//Bowl.setFilePath(FILE_NAME);
-		//InitView.setFilePath(FILE_NAME);
-		//Bowl.setVisible(true);
-	//	this.InitView.setFilePath(_pathFiles);
+		//	Bowl.setFilePath(FILE_NAME);
+		//	InitView.setFilePath(FILE_NAME);
+		//	Bowl.setVisible(true);
+		//	this.InitView.setFilePath(_pathFiles);
 		
 	}
 	

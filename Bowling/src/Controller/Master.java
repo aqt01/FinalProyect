@@ -31,7 +31,7 @@ public class Master
 		
 		System.out.println("!!!<> <> ! > "+View.InitView.getTxtFilePath());
 		// a partir del fileChooser
-		Model.InitController(View.InitView.getTxtFilePath());
+		Model.InitController(this.View.getTxtFilePath());
 		//System.out.println(Resorse.pathFiles + "Files" + View.getFILE_NAME());
 		//Model.InitController(Resorse.pathFiles + "Files" + View.getFILE_NAME());
 		

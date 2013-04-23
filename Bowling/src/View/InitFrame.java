@@ -15,10 +15,11 @@ import javax.swing.filechooser.FileNameExtensionFilter;
 
 public class InitFrame 
 {
+	//BowlFrame bframe = new BowlFrame();
 	JFileChooser chooser;
 	simpleProgressBar progres ;
 	public String FILE;
-	public String txtFilePath; // this contains the TxtFilePath
+	private String txtFilePath; // this contains the TxtFilePath
 	// Load the components onto the frame
 	
 
@@ -54,6 +55,9 @@ public class InitFrame
 		
 	}
 	
+	public void setTxtFilePath(String _path) {
+		this.txtFilePath = _path;
+	}
 	
 	
 	@SuppressWarnings("static-access")
@@ -99,14 +103,15 @@ public class InitFrame
 				// TODO Auto-generated method stub
 				// TODO Auto-generated method stub
 				String path = FileChooser(frame);			
-				;
+				
 				//PATH = path;
 				String no = "NO";
 				// si ha seleccionado un archivo, muestra el progres y carga
 				if(!path.equals(no))
 				{
 					 simpleProgressBar progres = new simpleProgressBar(100,100);
-					 txtFilePath = path;
+					 setTxtFilePath(path);
+					
 				}
 				
 			
@@ -172,7 +177,12 @@ public class InitFrame
     	cont.add(buttonCharge);
     	cont.add(buttonExit);    	
     	frame.setVisible(true);
-    	
+    	/*
+    	while(null==(getTxtFilePath() ) ) // locked until you get a valid txtfile
+    	{
+    		
+    	}
+    	*/
     }
   
 	// Funcion para llamar al JFilechooser y devolver su ruta absoluta 
@@ -201,13 +211,15 @@ public class InitFrame
 				if(response == JOptionPane.CANCEL_OPTION)
 				{
 					path = FileChooser(frame);
+					
 				}
 				break;			
 			}
 			
-			txtFilePath = String.valueOf(chooser.getSelectedFile()) ;
-			path = String.valueOf(chooser.getSelectedFile());
-			
+			 this.setTxtFilePath(String.valueOf(chooser.getSelectedFile()) ) ;
+			 System.out.println( "selected > "+ chooser.getSelectedFile() );
+			 path = String.valueOf(chooser.getSelectedFile());
+		//	 BowlFrame bframe = new BowlFrame();
 		}
 		return path;
 	}

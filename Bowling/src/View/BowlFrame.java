@@ -43,12 +43,13 @@ public class BowlFrame extends JFrame
 	private int nidx;
 	private int bidx0;
 	
-	public BowlFrame()
+	public BowlFrame(String _filePath)
 	{
 		nidx = 0;
 		nidx0 = 0;
 		bidx = 0;
 		cnt = 0;
+		setFilePath(_filePath);
 		titleInit();
 		contentInit();
 	}

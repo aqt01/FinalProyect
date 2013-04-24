@@ -83,7 +83,8 @@ public class ViewController
 	{
 		return FILE_NAME;
 	}
-	public String getTxtFilePath() {
+	public String getTxtFilePath() 
+	{
 		return InitView.getTxtFilePath();
 	}
 

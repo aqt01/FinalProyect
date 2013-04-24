@@ -1,5 +1,6 @@
 package Controller;
 
+import Model.Player;
 import Model.ResorseManager;
 
 public class Master 
@@ -32,6 +33,9 @@ public class Master
 		System.out.println("!!!<> <> ! > "+View.InitView.getTxtFilePath());
 		// a partir del fileChooser
 		Model.InitController(this.View.getTxtFilePath());
+		View.Bowl.setPlayers(Model.getPlayer(0), Model.getPlayer(1));
+		System.out.println("passed");
+		//	View.Bowl.setPlayers();
 		//System.out.println(Resorse.pathFiles + "Files" + View.getFILE_NAME());
 		//Model.InitController(Resorse.pathFiles + "Files" + View.getFILE_NAME());
 		

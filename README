@@ -1,9 +1,4 @@
-
 ************************************ ^ *****************************************
-
-Bowling
-
-El programa bowling consiste en ser un visualizador de puntajes de juegos de boliche. Su funcionamiento es simple, solo tiene que descargar la carpeta "BowlingJar" y ejecutar desde esa misma carpeta el .jar con nombre Bowling, inmediatamente, el programa creara una carpeta llamada "FinalProyect" en su escritorio con una carpeta files dentro, de donde se copiaran todos los archivos de imagenes y puntajes que usara el programa.
 
 ************************************ ^ *****************************************
 
@@ -11,9 +6,113 @@ Proyecto Final
 Tecnicas Fundamentales de ingenieria de software
 
 Integrantes:
-Lowell Abbott
-Victor Polanco
-Enrique Evertz
+Nombre completo Matricula (Usuario de github)
 
-> I.N.T.E.C. <
+Enrique Evertz 10-0917 (Evertz5)
+Victor Polanco 10-0715 (vmp2408)
+Lowell Abbott 11-0697 (aqt01)
+
+
+>>> I.N.T.E.C. <<<
+
+
+************************************ ^ *****************************************
+
+0 Sobre "Bowling"
+1 Instalacion y uso de Bowling
+2 Verificacion de liberacion
+3 Informacion de las clases del codigo fuente
+
+************************************ ^ *****************************************
+
+0 Sobre "Bowling"
+El programa bowling consiste en ser un visualizador de puntajes de juegos de boliche. 
+Su funcionamiento es simple, solo tiene que descargar la carpeta "BowlingJar" y ejecutar desde
+esa misma carpeta el .jar con nombre Bowling, inmediatamente, el programa creara una carpeta llamada
+"FinalProyect" en su escritorio con una carpeta files dentro, de donde se copiaran todos los archivos de imagenes y 
+puntajes que usara el programa.
+
+************************************ ^ *****************************************
+
+1 Instalacion y uso de Bowling
+
+Para instalar y usar "Bowling", se debe clonar el repositorio de github y extraer la carpeta con nombre "BowlingJar".
+
+Esta carpeta contiene los archivos necesarios para que el programa funcione.
+Posee "Bowling.jar" que es el ejecutable de la aplicacion y posee un folder llamado "Res" que es donde se almacenan los
+recursos (imagenes y archivo con puntaje) de la aplicacion.
+
+Para usarla solo debe ejecutar el jar "Bowling.jar" y automaticamente creara una carpeta con nombre "FinalProject"
+dentro de ella, habra otra carpeta con nombre "Files" y alli se encontrara el archivo llamado "ArchivoPrueba.txt" 
+que posee valores de un juego de boliche al azar para poder visualizar, ese archivo proviene de la carpeta "Res" que se copia
+desde esa carpeta hacia FinalProject/Files en el escritorio.
+
+
+El proceso de crear esta carpeta y copiar el archivo fue hecho con el fin de que el usuario pueda identificar donde esta el 
+archivo a cargar de manera mas rapida y organizada, porque estara dentro de una carpeta que hace alusion a este proyecto final. 
+
+El porque la carpeta "FinalProject" solo tiene dentro la carpeta "Files", fue debido a que queriamos hacer que los recursos 
+de la aplicacion( imagenes de los botones ) estuvieran dentro de esa carpeta tambien, pero al final nos dimos cuenta que
+era mejor que estuviesen junto al .jar
+
+************************************ ^ *****************************************
+
+2 Verificacion de liberacion
+
+Para evidenciar que el .jar que el usuario descarga del github es la version desarrollada por el equipo, hemos hecho firmado
+el .jar usando "jarsigner" con el certificado usando el par de llaves DSA siguiente:
+
+
+-----BEGIN NEW CERTIFICATE REQUEST-----
+MIIChzCCAkUCAQAwgYExCzAJBgNVBAYTAlJEMRowGAYDVQQIExFEaXN0cml0byBOYWNpb25hbDEW
+MBQGA1UEBxMNU2FudG8gRG9taW5nbzEQMA4GA1UEChMHQm93bGluZzEUMBIGA1UECxMLQm93bGlu
+Z1RlYW0xFjAUBgNVBAMTDUxvd2VsbCBBYmJvdHQwggG4MIIBLAYHKoZIzjgEATCCAR8CgYEA/X9T
+gR11EilS30qcLuzk5/YRt1I870QAwx4/gLZRJmlFXUAiUftZPY1Y+r/F9bow9subVWzXgTuAHTRv
+8mZgt2uZUKWkn5/oBHsQIsJPu6nX/rfGG/g7V+fGqKYVDwT7g/bTxR7DAjVUE1oWkTL2dfOuK2HX
+Ku/yIgMZndFIAccCFQCXYFCPFSMLzLKSuYKi64QL8Fgc9QKBgQD34aCF1ps93su8q1w2uFe5eZSv
+u/o66oL5V0wLPQeCZ1FZV4661FlP5nEHEIGAtEkWcSPoTCgWE7fPCTKMyKbhPBZ6i1R8jSjgo64e
+gYEAk3JDO6s4HKaVoRnsc2qru+Je7XMhPQzCk5s6oX2IrTS7LWNBfzvJ01PsT8bJiQqTJjFeahZJ
+K7OmdZFuo38L+iE1YvH7YnoBJDvMpPG+qFGQiaiD3+Fa5Z8GkotmXoB7VSVkAUw7/s9JKgOBhQAC
+vGBqUEdbQgakReu4BWxaU/RAWcvXOLl+NneAHq26scyWFo+fSLlM0eZT4tLi6sKor4pM0DPLAELo
+8qlbAilfoIo3DfolY6+hXkCgADALBgcqhkjOOAQDBQADLwAwLAIUGNJU3Iz7mPNzYQ0qdcA6/sjz
+/D4CFHw9T45x+jozC5hhG/UuM/DB1tQx
+-----END NEW CERTIFICATE REQUEST-----
+
+PD: El certificado y las llaves DSA se encuentra dentro de la carpeta BowlingJar
+
+************************************ ^ *****************************************
+
+3 Informacion de las clases del codigo fuente
+
+Entrega del proyecto inicial “Bowling”
+
+
+View
+SplashScreen.Java: llama al Splash.
+BowFrame.Java: es el view de la aplicación.
+InitFrame.Java: Busca el archivo del frame.
+SimpleProgressBar.Java: es la barra completa.
+Table.Java: La tabla de cada panel.
+TablaPanel.Java: contiene los paneles donde se ven.
+
+Controller
+Master.Java: Maneja todo, es el main de la aplicación
+ModelController.java: Responsable de controlar e inicar los modelos o los datos que manejara la aplicacion
+ViewController.java: Responsable de controlar e iniciar las vistas
+
+Model
+File-Reader.Java: coge los archivos y lo entra a la lista.
+Input-Handler.Java: verifica si el archivo está correcto.
+Player.Java: Tiene todos los datos de la partida.
+ResHalper.Java: Recursos, contiene todo con respecto a la aplicación.
+Shot.Java: Contiene los datos del toro.
+ResorseManager.java: Manejador de recursos, responsable de crear las carpetas "FinalProject" y "Files" y de mover "ArchivoPrueba.txt"
+dentro de la carpeta Files.
+
+
+Test
+JTest.java: Posee las pruebas unitarias de la aplicacion
+LogClass.java: Clase encargada de guardar el log de la prueba unitaria
+
+************************************ ^ *****************************************
 

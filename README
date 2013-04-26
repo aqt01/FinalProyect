@@ -15,11 +15,15 @@ Lowell Abbott 11-0697 (aqt01)
 
 >>> I.N.T.E.C. <<<
 
+
+************************************ ^ *****************************************
+
 0 Sobre "Bowling"
 1 Instalacion y uso de Bowling
 2 Verificacion de liberacion
 3 Informacion de las clases del codigo fuente
-4
+
+************************************ ^ *****************************************
 
 0 Sobre "Bowling"
 El programa bowling consiste en ser un visualizador de puntajes de juegos de boliche. 
@@ -28,6 +32,7 @@ esa misma carpeta el .jar con nombre Bowling, inmediatamente, el programa creara
 "FinalProyect" en su escritorio con una carpeta files dentro, de donde se copiaran todos los archivos de imagenes y 
 puntajes que usara el programa.
 
+************************************ ^ *****************************************
 
 1 Instalacion y uso de Bowling
 
@@ -50,10 +55,12 @@ El porque la carpeta "FinalProject" solo tiene dentro la carpeta "Files", fue de
 de la aplicacion( imagenes de los botones ) estuvieran dentro de esa carpeta tambien, pero al final nos dimos cuenta que
 era mejor que estuviesen junto al .jar
 
+************************************ ^ *****************************************
+
 2 Verificacion de liberacion
 
 Para evidenciar que el .jar que el usuario descarga del github es la version desarrollada por el equipo, hemos hecho firmado
-el .jar usando "jarsigner" con el certificado usando el DSA keypair siguiente:
+el .jar usando "jarsigner" con el certificado usando el par de llaves DSA siguiente:
 
 
 -----BEGIN NEW CERTIFICATE REQUEST-----
@@ -71,6 +78,9 @@ vGBqUEdbQgakReu4BWxaU/RAWcvXOLl+NneAHq26scyWFo+fSLlM0eZT4tLi6sKor4pM0DPLAELo
 /D4CFHw9T45x+jozC5hhG/UuM/DB1tQx
 -----END NEW CERTIFICATE REQUEST-----
 
+PD: El certificado y las llaves DSA se encuentra dentro de la carpeta BowlingJar
+
+************************************ ^ *****************************************
 
 3 Informacion de las clases del codigo fuente
 
@@ -104,5 +114,5 @@ Test
 JTest.java: Posee las pruebas unitarias de la aplicacion
 LogClass.java: Clase encargada de guardar el log de la prueba unitaria
 
-
+************************************ ^ *****************************************
 

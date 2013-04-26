@@ -61,13 +61,9 @@ import javax.swing.JProgressBar;
         {
         	frame.dispose();
         }
-        
-    
-    
-    
-          
+         
      //Main Method  
-     
+    
     }
    
     

@@ -47,7 +47,7 @@ public class SplashScreen extends JWindow implements Runnable{
          int x = (screen.width-width)/2;
          int y = (screen.height-height)/2;
          setBounds(x,y,width,height);
-         System.out.println("!!!!" + resPath);
+         //System.out.println("RESPATH (SPLASHCREEN)" + resPath);
          // Build the splash screen
          JLabel label = new JLabel(new ImageIcon(resPath + "Splash.png"));
          JLabel copyrt = new JLabel

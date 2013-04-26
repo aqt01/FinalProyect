@@ -78,7 +78,7 @@ public class InitFrame
     	//Icon image = new ImageIcon(getClass().getResource("Splash.png"));
     	//Icon iconLoad = new ImageIcon (getClass().getResource("Load.png"));
     	//Icon iconExit = new ImageIcon (getClass().getResource("Exit.png"));
-    	System.out.println("!!!! "+ this.FILE);
+    	//System.out.println("FILE(INITFRAME.LoadComponents):   "+ this.FILE);
     	Icon image = new ImageIcon(this.FILE + "Splash.png");
     	Icon iconLoad = new ImageIcon (this.FILE + "Load.png");    	
     	Icon iconExit = new ImageIcon (this.FILE + "Exit.png");
@@ -217,7 +217,7 @@ public class InitFrame
 			}
 			
 			 this.setTxtFilePath(String.valueOf(chooser.getSelectedFile()) ) ;
-			 System.out.println( "selected > "+ chooser.getSelectedFile() );
+			 System.out.println( "File Selected > "+ chooser.getSelectedFile() );
 			 path = String.valueOf(chooser.getSelectedFile());
 		//	 BowlFrame bframe = new BowlFrame();
 		}

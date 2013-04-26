@@ -31,12 +31,12 @@ public class  ResorseManager
 		if (isMacOs || isLinux) 
 		{
 			desktopPath = System.getProperty("user.home") + MAC_SEPARATOR + "Desktop";
-			s =  desktopPath.replace("/","/") + "/" +"FinalProyect" + MAC_SEPARATOR;
+			s =  desktopPath.replace("/","/") + "/" +"FinalProject" + MAC_SEPARATOR;
 			pathRes = "."+MAC_SEPARATOR + "Res" + MAC_SEPARATOR; 
 		} else
 		{
 			desktopPath =System.getProperty("user.home") + WINDOWS_SEPARATOR +"Desktop";
-	        s = desktopPath.replace(WINDOWS_SEPARATOR, WINDOWS_SEPARATOR) + WINDOWS_SEPARATOR + "FinalProyect" +WINDOWS_SEPARATOR ;	        
+	        s = desktopPath.replace(WINDOWS_SEPARATOR, WINDOWS_SEPARATOR) + WINDOWS_SEPARATOR + "FinalProject" +WINDOWS_SEPARATOR ;	        
 	        pathRes = "."+MAC_SEPARATOR + "Res" + MAC_SEPARATOR;
 		}
 		this.PATH = s;		
@@ -100,16 +100,16 @@ public class  ResorseManager
 		String mess;
 		
 		if(mkdir && mkdirFile)
-			mess = "Folder already created or didn't exists";
+			mess = "Folder created";
 		else
-			mess = "Folder w/ Project Files path: ";
+			mess = "Folder w/ Project Files already created: ";
 		
 		JOptionPane.showMessageDialog(null, mess +s);
 		
 		
 		System.out.println("Project Files Path: ");
 		System.out.println(this.pathFiles);
-        System.out.println(mkdirFile);
+        //System.out.println(mkdirFile);
         
 	}
 	

@@ -223,6 +223,9 @@ public class BowlFrame extends JFrame
 			    	framed = framed.getParent(); 
 			    while (!(framed instanceof JFrame));                                      
 			    	((JFrame) framed).dispose();
+			    // exits
+			    System.exit(0);
+			    
 			}
 		});
 		
@@ -241,7 +244,7 @@ public class BowlFrame extends JFrame
 			public void actionPerformed(ActionEvent e) 
 			{
 				// TODO Auto-generated method stub
-				frame.setState(Frame.ICONIFIED);
+				frame.setState(Frame.ICONIFIED);				
 			}
 		});
 		

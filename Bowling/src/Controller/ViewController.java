@@ -6,6 +6,7 @@ import View.BowlFrame;
 import View.InitFrame;
 import View.SplashScreen;
 import View.TablePanel;
+import View.simpleProgressBar;
 
 public class ViewController 
 {
@@ -35,7 +36,7 @@ public class ViewController
 	private void chooseFileWindow()
 	{
 
-		System.out.println("GOT THIS "  + FILE_NAME);
+	//	System.out.println("GOT THIS FILENAME (VIEW CONTROLLER)"  + FILE_NAME);
 		InitFrame init = new InitFrame();
 		init.setFilePath(FILE_NAME);
 		JFrame frame = new JFrame("Bowling Game");			
@@ -48,12 +49,16 @@ public class ViewController
 		frame.setSize(400,400);		
 		init.LoadComponents(frame);
 		
+
+		// first show the first fileChooser window
 		
 		String p1 = "", p = init.FileChooser(frame);
-		System.out.println("p:" + p + " " + p.length());
+		simpleProgressBar progres = new simpleProgressBar(100,100);
+			
+		//System.out.println("p(VIEWCONTORLLER):" + p + " " + p.length());
 		
 		int i = p.length() - 1, j = 0;
-		System.out.println(i + " " + p.charAt(i));
+		//System.out.println(i + " " + p.charAt(i));
 		while(i > 0)
 		{
 			if( (p.charAt(i) == '/') ||  (p.charAt(i) == '\''))

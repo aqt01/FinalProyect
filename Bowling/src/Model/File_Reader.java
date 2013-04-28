@@ -17,6 +17,7 @@ public class File_Reader
 	
 	private File file;
 	
+	
 	public File_Reader()
 	{
 		
@@ -41,7 +42,7 @@ public class File_Reader
 	        String line;
 	        String f = "", s = "", t = "";
 	        
-	        while ((line = br.readLine()) != null && cnt < 21) 
+	        while ((line = br.readLine()) != null ) 
 	        {
 	        	if(cnt % 2 == 0)
 	        	{
@@ -50,6 +51,7 @@ public class File_Reader
 	        		line = br.readLine();
 	        		
 	        		s = String.valueOf(line);
+	        		System.out.println("S: " + s);
 	        		if(cnt <= 19)
 	        			player0.addShot(f, s);
 	        		else  
@@ -85,11 +87,15 @@ public class File_Reader
 	    {
 	        br.close();
 	    }
-		System.out.println(cnt);
+		System.out.println("quantity: " + cnt);
 		List<Player> K = new ArrayList<Player>();
 		K.add(player0);
 		K.add(player);
 		
 		return K;
+	}
+	
+	public File getFile() {
+		return file;
 	}
 }

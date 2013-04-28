@@ -1,4 +1,4 @@
-package Controller;
+package Test;
 
 import java.io.IOException;
 import java.util.List;
@@ -6,21 +6,20 @@ import java.util.List;
 import Model.File_Reader;
 import Model.Player;
 
-public class ModelController 
+public class ModelControllerTest 
 {
 	private File_Reader Reader;
 	private Player Player;
 	private Player Player0;
-	private String fileP;
-	
-	public ModelController()
+	private String fileP; //
+	public ModelControllerTest()
 	{
 		Reader = new File_Reader();
 	}
 	
 	public void InitController(String file)
 	{	
-		this.setFile(file);
+		setFile(file);
 		try {
 			initializePlayers(file);
 		} catch (IOException e) {
@@ -45,11 +44,9 @@ public class ModelController
 		Reader.setFile(file);
 	}
 	
-	public String getFile()
-	{
-		
+	public String getFilePath() {
 		return this.fileP;
-	}
+	} 
 	
 	public void PrinTests() 
 	{	

@@ -1,0 +1,2 @@
+[ 28-4-2013, 2:30:18 ] ->  Is ./ValidTest.txt a Valid File ? : true
+[ 28-4-2013, 2:30:18 ] -> Is ./InvalidTest.txt an Valid File ? : false

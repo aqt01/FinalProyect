@@ -17,6 +17,9 @@ public class Shot
 	{
 		this.setFirst(First);
 		this.setSecond(Second);
+		// must be fixed
+		System.out.println(First);
+		System.out.println(Second);
 		this.isSpare = ((Integer.valueOf(First) + Integer.valueOf(Second)) == 9);
 		this.isSpare = (First.equals("10"));
 		this.isShowing = false;

@@ -22,6 +22,7 @@ Lowell Abbott 11-0697 (aqt01)
 1 Instalacion y uso de Bowling
 2 Verificacion de liberacion
 3 Informacion de las clases del codigo fuente
+4 JuniTestings
 
 ************************************ ^ *****************************************
 
@@ -112,7 +113,13 @@ dentro de la carpeta Files.
 
 Test
 JTest.java: Posee las pruebas unitarias de la aplicacion
-LogClass.java: Clase encargada de guardar el log de la prueba unitaria
+LogClass.java: Clase encargada de guardar el log de la prueba unitaria  
+ModelControllerTest.java: Clase modificada con fines de probar el archivo
+
+4 JunitTestings
+Dentro de la carpeta Bowling, existe un log que posee de nombre la fecha y la hora de la prueba realizada junto con el resultado
+de las mismas. Esos archivos son resultado de ejecutar los JunitTestings dentro del paquete de "Test" de la carpeta "Bowling"
+
 
 ************************************ ^ *****************************************
 
